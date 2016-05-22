@@ -77,7 +77,8 @@ I tried to put comments on the algorithmic part, so Finding an elevator, and the
 
 ## Time
 
-Started at : 15:11 (British Standard Time)
-Finished at : 19:43 (British Standard Time)
+Started at : Sat-21-May 15:11 (British Standard Time)
+
+Finished at : Sat-21-May 19:43 (British Standard Time)
 
 4h32min spent for the coding, tests, and main documentation part.
