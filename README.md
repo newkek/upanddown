@@ -6,15 +6,35 @@ Elevator management service simulation.
 
 A `ElevatorControlSystem` class manages multiple functioning elevators, persons can submit Pickup requests to the system and the system will send an elevator to pick them up.
 
-The system will choose if possible, the first closest available elevator, if no elevator is available an the closest one will be chosen, and will come after processing its requests.
+The system will choose if possible, the first closest available elevator, if no elevator is available, the closest one will be chosen, and will come after processing its current pending requests.
 
 Pickup requests have to specify the floor on which the request is made, and the destination floor.
 
-## Testing
+## Usage
 
-Examples can be found in the `src/test/` directory. There are some test simulations I left there that I used when testing, plus some explanations.
+`ElevatorControlSystem` provides 4 main functionalities : 
 
-Utils to print the status and the Elevators can be found in `me.kgdo.upanddown.util`.
+- `pickup(int pickupFloor, int destinationFloor)` : Send a pickup request, the system will send an elevator as soon as possible.
+- `update(int elevatorId, int floorNumber)` : Set an elevator to a particular floor.
+- `status()` / `status(int elevatorId)` : Get the current status of all the elevators / one elevator. The data returned for each elevator is a Map on which the static keys are defined in the `Elevator` class, the keys are : 
+ * `ELEVATOR_ID_KEY`
+ * `CURRENT_FLOOR_KEY`
+ * `CURRENT_DIRECTION_KEY`
+ * `CURRENT_PICKUP_KEY`
+ * `PENDING_PICKUPS_KEY`
+        
+- `step()` : Time control the simulation.
+
+## Compiling and Testing
+
+The project is using Apache Maven management tool. To create the distribution of the project : 
+```
+mvn clean package
+```
+
+Code examples can be found in the `src/test/` directory. There are some test simulations I left there that I used when testing, plus some explanations.
+
+Utils to print the status and the Elevators can be found in `me.kgdo.upanddown.util.PrettyPrintUtils`.
 
 ## Example running
 
@@ -60,4 +80,4 @@ I tried to put comments on the algorithmic part, so Finding an elevator, and the
 Started at : 15:11 (British Standard Time)
 Finished at : 19:43 (British Standard Time)
 
-4h32min spent.
+4h32min spent for the coding, tests, and main documentation part.
